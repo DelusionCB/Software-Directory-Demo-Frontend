@@ -21,6 +21,7 @@
     "rules": {
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
+        "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/semi": "off",
         "no-console": "off",
         "comma-dangle": [2, "always-multiline"],
@@ -30,7 +31,10 @@
         "indent": [2, 4, {"SwitchCase":1}],
         "@typescript-eslint/indent": [2, 4, {"SwitchCase":1}],
         "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/quotes": ["error", "single", {"allowTemplateLiterals": true}],
         "quotes": [2, "single", {"avoidEscape": true, "allowTemplateLiterals": true}],
+        "@typescript-eslint/object-curly-spacing": [2, "never"],
+        "@typescript-eslint/strict-boolean-expressions": "warn",
         "object-curly-spacing": [2, "never"],
         "space-infix-ops": "error",
         "import/no-unresolved": 0,
