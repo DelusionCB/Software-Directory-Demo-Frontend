@@ -1,26 +1,38 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route, Outlet} from 'react-router-dom';
+import Header from './Components/Header/Header'
+import Footer from './Components/Footer/Footer'
+import ErrorPage from './Views/Error'
 
-function App () {
+export default function App () {
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-          Learn React
-                </a>
-            </header>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="directory/create/new" element={<h1>Testitest</h1>} />
+                <Route path='*' element={<ErrorPage />} />
+            </Route>
+        </Routes>
+    );
+}
+
+function Layout () {
+    return (
+        <div>
+            <Header />
+            <div>
+                <Outlet />
+            </div>
+            <Footer />
         </div>
     );
 }
 
-export default App
+function Home () {
+    return (
+        <div>
+            <h2>Home</h2>
+        </div>
+    );
+}
