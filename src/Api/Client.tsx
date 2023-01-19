@@ -1,8 +1,6 @@
 import axios from 'axios'
 import get from 'lodash/get'
 
-import constants from '../constants'
-
 export class ApiClient {
     baseUrl = process.env.REACT_APP_API_KEY
 
@@ -15,15 +13,10 @@ export class ApiClient {
         return `${this.baseUrl}/${endpoint}${endsWithTrailingSlash ? '' : '/'}`
     }
 
-    getHeaders = () => ({
-        ...constants.API_HEADERS,
-    })
-
     request = async ({
         method = '',
         endpoint = '',
         data = {},
-        headers = {},
     }) => {
         const dataOrParams = ['GET', 'DELETE'].includes(method.toUpperCase()) ? 'params' : 'data'
         return await axios
@@ -31,8 +24,8 @@ export class ApiClient {
                 method,
                 url: this.getUrl(endpoint),
                 headers: {
-                    ...this.getHeaders(),
-                    ...headers,
+                    Accept: 'application/json',
+                    'Content-Type': 'multipart/form-data',
                 },
                 [dataOrParams]: data,
             })

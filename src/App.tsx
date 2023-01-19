@@ -6,6 +6,7 @@ import Footer from './Components/Footer/Footer'
 import ErrorPage from './Views/Error/Error'
 import DirectoryPage from './Views/Directory/Directory'
 import DirectoryItem from './Views/DirectoryItem/DirectoryItem'
+import DirectoryFields from './Views/DirectoryFields/DirectoryFields'
 
 export default function App () {
     return (
@@ -13,7 +14,8 @@ export default function App () {
             <Route path="/" element={<Layout />}>
                 <Route index element={<DirectoryPage />} />
                 <Route path="/directory/:id" element={<DirectoryItem />} />
-                <Route path="directory/create/new" element={<h1>Testitest</h1>} />
+                <Route path="directory/create/new" element={<DirectoryFields />} />
+                <Route path="directory/edit/:id" element={<DirectoryFields />} />
                 <Route path='*' element={<ErrorPage />} />
             </Route>
         </Routes>

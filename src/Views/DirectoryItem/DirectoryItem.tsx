@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import client from '../../Api/Client'
 import {useLocation} from 'react-router-dom'
+import {Container, Row, Col} from 'reactstrap'
 
 interface itemProps {
     central_function: string
@@ -40,11 +41,17 @@ export default function DirectoryItem () {
     }, [])
 
     return (
-        <div id='error-page'>
-            <h1>Sovellus: {item.name}</h1>
-            <div>
-                <p>{item.description}</p>
-            </div>
-        </div>
+        <Container className='directoryItem-page'>
+            <Row>
+                <Col>
+                    <h1>Sovellus: {item.name}</h1>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <p>{item.description}</p>
+                </Col>
+            </Row>
+        </Container>
     );
 }
