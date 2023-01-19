@@ -3,13 +3,16 @@ import React from 'react';
 import {Routes, Route, Outlet} from 'react-router-dom';
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
-import ErrorPage from './Views/Error'
+import ErrorPage from './Views/Error/Error'
+import DirectoryPage from './Views/Directory/Directory'
+import DirectoryItem from './Views/DirectoryItem/DirectoryItem'
 
 export default function App () {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
-                <Route index element={<Home />} />
+                <Route index element={<DirectoryPage />} />
+                <Route path="/directory/:id" element={<DirectoryItem />} />
                 <Route path="directory/create/new" element={<h1>Testitest</h1>} />
                 <Route path='*' element={<ErrorPage />} />
             </Route>
@@ -21,18 +24,10 @@ function Layout () {
     return (
         <div>
             <Header />
-            <div>
+            <main>
                 <Outlet />
-            </div>
+            </main>
             <Footer />
-        </div>
-    );
-}
-
-function Home () {
-    return (
-        <div>
-            <h2>Home</h2>
         </div>
     );
 }

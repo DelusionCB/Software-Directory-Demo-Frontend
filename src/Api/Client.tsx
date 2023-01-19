@@ -11,7 +11,6 @@ export class ApiClient {
     }
 
     getUrl = (endpoint: string) => {
-        console.log(this.baseUrl, 'base')
         const endsWithTrailingSlash = endpoint.substring(endpoint.length - 1) === '/'
         return `${this.baseUrl}/${endpoint}${endsWithTrailingSlash ? '' : '/'}`
     }
