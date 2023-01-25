@@ -8,9 +8,9 @@ import {
     UncontrolledDropdown,
     DropdownMenu,
     DropdownItem,
-    Button,
 } from 'reactstrap';
 import {Link} from 'react-router-dom'
+import './index.css'
 
 function Header (args: JSX.IntrinsicAttributes & JSX.IntrinsicClassAttributes<Navbar>) {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,13 +20,13 @@ function Header (args: JSX.IntrinsicAttributes & JSX.IntrinsicClassAttributes<Na
     };
 
     return (
-        <div>
-            <Navbar expand={true} container='fluid' style={{backgroundColor: '#312682'}} dark={true} {...args}>
+        <>
+            <Navbar expand={true} container='fluid' dark={true} {...args}>
                 <Link
                     to='/'
                     relative="path"
                 >
-                    <img height={80} src='https://www.paimio.fi/uploads/2022/11/351ab27e-varha_logo_fi-1024x385.png' />
+                    <img alt='Varhan logo' height={60} src='https://www.paimio.fi/uploads/2022/11/351ab27e-varha_logo_fi-1024x385.png' />
                 </Link>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
@@ -56,10 +56,9 @@ function Header (args: JSX.IntrinsicAttributes & JSX.IntrinsicClassAttributes<Na
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </Nav>
-                    <Button>Kirjaudu sisään</Button>
                 </Collapse>
             </Navbar>
-        </div>
+        </>
     );
 }
 

@@ -9,6 +9,7 @@
     }
 }
 
+
 .header {
     background: rgb(32, 32, 32);
     width: 100%;
@@ -101,40 +102,6 @@
                     }
                 }
             }
-            .btn {
-                cursor: pointer;
-                outline: none;
-                padding: 0.75rem 1.25rem;
-                border-radius: 12px;
-                font-size: 1rem;
-                font-family: inherit;
-                background: rgb(162, 162, 246);
-                color: rgb(32, 32, 32);
-                border: 1px solid transparent;
-                transition: 0.3s ease all;
-                margin:0.50em 0.50em;
-
-
-                &:hover {
-                    border-color: rgb(162, 162, 246);
-                    background: rgba(rgb(162, 162, 246), 0.1);
-                    color: rgb(162, 162, 246);
-                }
-                &:active {
-                    border-color: rgb(162, 162, 246);
-                    background: linear-gradient(rgba(rgb(162, 162, 246), 0.2), rgba(rgb(162, 162, 246), 0.3));
-                    color: rgb(162, 162, 246);
-                }
-                &__login{
-
-                    background-color: rgb(32, 32, 32);
-                    color:#fff;
-
-                }
-
-            }
-
-
             &.isMenu {
                 transform: translate(100%);
             }

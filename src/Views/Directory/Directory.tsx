@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import client from '../../Api/Client'
 import DirectoryCard from '../../Components/DirectoryCard/DirectoryCard'
 import {useNavigate} from 'react-router-dom'
+import './index.css'
 
 export default function DirectoryPage () {
     const navigate = useNavigate()
@@ -32,12 +33,10 @@ export default function DirectoryPage () {
         const mapped: JSX.Element[] = []
         data.map((item, key) => (
             mapped.push(
-                <div key={key}>
-                    <DirectoryCard
-                        fetchDirectoryId={(e: number) => { voidFunc(e); }}
-                        data={item}
-                    />
-                </div>,
+                <DirectoryCard
+                    fetchDirectoryId={(e: number) => { voidFunc(e); }}
+                    data={item}
+                />,
             )
         ))
         return mapped
@@ -45,10 +44,12 @@ export default function DirectoryPage () {
 
     const mappedItems = mapDirectoryData()
     return (
-        <div id='error-page'>
-            <h1>Moi Matias</h1>
+        <div className='directory-page'>
             <div>
-                {mappedItems}
+                <h1>Tervetuloa selaamaan arkistoja</h1>
+                <div className='directory-items'>
+                    {mappedItems}
+                </div>
             </div>
         </div>
     );
