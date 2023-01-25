@@ -7,7 +7,7 @@ import ErrorPage from './Views/Error/Error'
 import DirectoryPage from './Views/Directory/Directory'
 import DirectoryItem from './Views/DirectoryItem/DirectoryItem'
 import DirectoryFields from './Views/DirectoryFields/DirectoryFields'
-
+import './index.css'
 export default function App () {
     return (
         <Routes>
@@ -24,7 +24,7 @@ export default function App () {
 
 function Layout () {
     return (
-        <div>
+        <div className='container-wrapper'>
             <Header />
             <main>
                 <Outlet />

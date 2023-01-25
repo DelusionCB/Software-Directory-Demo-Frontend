@@ -56,7 +56,6 @@ export default function FormFields () {
         if (e.target.files !== null) {
             const data = new FormData();
             data.append('files', new Blob([JSON.stringify(e.target.files[0])], {type: 'text/html'}))
-            console.log(e.target.files[0], '-----', data, 'file')
             setValues({
                 ...values,
                 [e.target.name]: e.target.files[0],

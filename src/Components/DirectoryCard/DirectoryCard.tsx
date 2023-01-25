@@ -46,10 +46,10 @@ export default function DirectoryCard (item: DirectoryProps) {
                     {item.data.classification}
                 </CardSubtitle>
                 <CardText>
-                    {item.data.description}
+                    {item.data.description.length > 60 ? item.data.description.slice(0, 60) + '...' : item.data.description}
                 </CardText>
                 <Button onClick={redirectToId}>
-                    Avaa sovelluksen tiedot
+                    Avaa arkiston tiedot
                 </Button>
             </CardBody>
         </Card>

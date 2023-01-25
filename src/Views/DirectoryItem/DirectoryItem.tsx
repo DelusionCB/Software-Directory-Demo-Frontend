@@ -44,12 +44,65 @@ export default function DirectoryItem () {
         <Container className='directoryItem-page'>
             <Row>
                 <Col>
-                    <h1>Sovellus: {item.name}</h1>
+                    <h1>Arkisto: {item.name}</h1>
                 </Col>
             </Row>
             <Row>
                 <Col>
+                    <h2>Kuvaus</h2>
                     <p>{item.description}</p>
+                </Col>
+                <Col>
+                    <h2>Toiminnallinen luokitus</h2>
+                    <p>{item.classification}</p>
+                </Col>
+                <Col>
+                    <h2>Kriittisyys</h2>
+                    <p>{item.criticality}</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h2>Palvelun toteuttava järjestelmä</h2>
+                    <p>{item.implementing_system}</p>
+                </Col>
+                <Col>
+                    <h2>Elinkaaren tila</h2>
+                    <p>{item.life_cycle_status}</p>
+                </Col>
+                <Col>
+                    <h2>Omistajayksikkö / osasto</h2>
+                    <p>{item.ownership}</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h2>Varautumistaso</h2>
+                    <p>{item.preparedness_level}</p>
+                </Col>
+                <Col>
+                    <h2>Vastuuhenkilö</h2>
+                    <p>{item.product_owner}</p>
+                </Col>
+                <Col>
+                    <h2>Tietoturvataso</h2>
+                    <p>{item.security_level}</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h2>Palvelutaso</h2>
+                    <p>{item.service_level}</p>
+                </Col>
+                <Col>
+                    <h2>Strateginen merkitys</h2>
+                    <p>{item.strategic_importance}</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <h2>Liitteet</h2>
+                    <a href={item.fileUrl}>{item.fileUrl}</a>
                 </Col>
             </Row>
         </Container>
