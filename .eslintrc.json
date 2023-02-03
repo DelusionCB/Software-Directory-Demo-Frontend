@@ -9,6 +9,12 @@
         "standard-with-typescript"
     ],
     "overrides": [
+        {
+            "files": [
+                "*.ts",
+                "*.tsx"
+            ]
+        }
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -35,7 +41,7 @@
         "quotes": [2, "single", {"avoidEscape": true, "allowTemplateLiterals": true}],
         "@typescript-eslint/object-curly-spacing": [2, "never"],
         "@typescript-eslint/restrict-template-expressions": "off",
-        "@typescript-eslint/strict-boolean-expressions": "warn",
+        "@typescript-eslint/strict-boolean-expressions": 0,
         "object-curly-spacing": [2, "never"],
         "space-infix-ops": "error",
         "import/no-unresolved": 0,

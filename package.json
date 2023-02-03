@@ -23,7 +23,10 @@
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
     "reactstrap": "^9.1.5",
-    "typescript": "*"
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "typescript": "*",
+    "webpack": "^5.75.0"
   },
   "scripts": {
     "lint": "eslint --fix",
